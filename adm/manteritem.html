@@ -1,0 +1,67 @@
+
+
+    <div style="margin: 50px;">
+      <h1>Manter Item</h1>
+      <form action="">
+        <input type="text" name="descricao" id="descricao" placeholder="Descrição do Item" />
+        <input type="number" name="valor" id="valor" placeholder="Valor do Item"/>
+
+        <select name="tipoitem" style="width: 10%; height: 36px;">
+          <option value="0">1</option>
+          <option value="1">2</option>
+          <option value="2">3</option>
+          <option value="3">4</option>
+        </select>
+
+        <span style="position: absolute; right: 50px;">
+        <button class="reload" onclick="girar()" type="button" id="reload">
+          <div class="imgreload" id="imgreload"></div>
+        </button>
+      </span>
+
+        <div style="margin-top: 15px;">
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+          <tr>
+            <th scope="col">fk_idtipo_item</th>
+            <th scope="col">iditem</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Ação</th>
+          </tr>
+        </thead>
+          <tr>
+            <td>AAAAAA</td>
+            <td>AAAAAA</td>
+            <td>AAAAAA</td>
+            <td>AAAAAA</td>
+            <td align="right"><button class="btn btn-outline-danger">Excluir</button></td>
+
+          </tr>
+          <tr>
+            <td>AAAAAA</td>
+            <td>AAAAAA</td>
+            <td>AAAAAA</td>
+            <td>AAAAAA</td>
+            <td align="right"><button class="btn btn-outline-danger">Excluir</button></td>
+
+          </tr>
+        </table>
+        </div>
+      </div>
+      </form>
+    </div>
+  </body>
+
+  <script>
+    var seta = document.getElementById("imgreload");
+    function girar() {
+      seta.style.animation = "girar 0.6s normal";
+
+      seta.onanimationend = () => {
+        window.location.reload();
+      };
+    }
+  </script>
+</html>

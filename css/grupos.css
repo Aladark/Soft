@@ -1,0 +1,474 @@
+/* Header */
+body {
+    display: block;
+    font-family: sans-serif;
+    margin: 0;
+    background: rgb(2, 0, 36);
+    height: 100vh;
+}
+
+.nav-logo-link {
+    display: block;
+    height: 60px;
+    width: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 0px;
+}
+
+.nav-logo {
+    height: 125%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+.section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.nav-grid {
+    display: -ms-grid;
+    display: grid;
+    height: 75px;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    grid-auto-flow: column;
+    grid-auto-columns: -webkit-max-content;
+    grid-auto-columns: max-content;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    -ms-grid-columns: 1fr -webkit-max-content -webkit-max-content -webkit-max-content;
+    -ms-grid-columns: 1fr max-content max-content max-content;
+    grid-template-columns: 1fr -webkit-max-content -webkit-max-content -webkit-max-content;
+    grid-template-columns: 1fr max-content max-content max-content;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    border-radius: 0px;
+    list-style-type: disc;
+
+    padding-left: 0;
+    list-style: none;
+}
+
+.sticky-nav {
+    position: relative;
+    display: block;
+    float: none;
+    clear: none;
+    background-color: transparent;
+    text-align: left;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 940px;
+}
+
+.section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    background-color: #1e293b;
+}
+
+.nav-link {
+    display: block;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 10px 0px;
+    outline-color: #ececec;
+    outline-offset: 0px;
+    outline-style: none;
+    outline-width: 3px;
+    color: #ececec;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+
+.list-item {
+    font-size: 30px;
+}
+
+.list-item-3 {
+    padding-bottom: 29px;
+}
+
+ul {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding-inline-start: 40px;
+}
+
+/*----------------------------------------*/
+
+.secao1 {
+    width: 70%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    margin-left: 20px;
+}
+
+.secao1 input {
+    width: 90%;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.inpmod input,
+textarea {
+    padding: 10px;
+    width: 90%;
+    font-size: 20px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.quant {
+    display: flex;
+    font-size: 30px;
+
+}
+
+.quant input {
+    min-height: 30px;
+    min-width: 30px;
+    margin: auto;
+}
+
+.inpmod input[type=radio] {
+    width: auto;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+.inpmod select {
+    padding: 10px;
+
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.scrollgroup {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.grupos {
+    width: 100%;
+    display: flex;
+}
+
+.grupo {
+    background-color: white;
+    width: 48%;
+    margin: 10px 10px 10px 10px;
+    margin-right: px;
+    text-align: left;
+    display: flex;
+    color: black;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+.grupo .imgjogo {
+    background-image: url(../img/among-us-icon-png-02.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 80px;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin: 5px;
+}
+
+.infogrupo {
+    display: block;
+    margin: 0;
+    width: 100%;
+    margin-left: 10px;
+}
+
+.infogrupo h2 {
+    margin-bottom: 0;
+}
+
+.infogrupo h3 {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.infogrupo p {
+    position: relative;
+    float: right;
+    margin-top: -20px;
+    margin-right: 10px;
+}
+
+
+.secao2 {
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    color: white;
+}
+
+.secao2 select {
+    font-size: 25px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.secao2 option {
+    font-size: 20px;
+}
+
+.secao2 button {
+    padding: 15px 75px;
+    font-size: 40px;
+    border-radius: 10px;
+    background-color: #e0d4eb;
+    border: 2px solid #371370;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.secao2 button:hover {
+    background-color: #ac94dc;
+}
+
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #ac94dc;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #371370;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #6424cc;
+    color: white;
+}
+
+
+.secao {
+    width: 50%;
+    height: 100%;
+    margin-right: 16px;
+}
+
+.secao h3 {
+    margin: 2px;
+}
+
+.plataforma {
+    margin-bottom: 2px;
+}
+
+.plataforma img {
+    width: 40px;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.headerperfil .avali {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 40px;
+}
+
+.barra {
+    width: 5px;
+    background-color: #371370;
+    background-image: linear-gradient(180deg, #371370 0%, #6424cc 50%);
+    margin-top: -2px;
+    margin-bottom: -2px;
+    margin-right: 10px;
+}
+
+.imagemjogo {
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 250px;
+    width: 100%;
+
+}
+
+.descjogo {
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 100%;
+    max-height: 250px;
+    overflow: auto;
+    margin-right: -16px;
+}
+
+p3 {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+    border-radius: 100%;
+    width: 1rem !important;
+    height: 1rem !important;
+    padding: 0px 24.5px 0px 24px;
+}
+
+.scrollmodal {
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.imguser {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 90px;
+    height: 70px;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin: 5px;
+}
+
+.infouser {
+    display: block;
+    margin: 0;
+    width: 100%;
+    margin-left: 10px;
+}
+
+.entrar {
+    padding: 15px 75px;
+    font-size: 25px;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #e0d4eb;
+    border: 2px solid #371370;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.entrar:hover {
+    background-color: #ac94dc;
+}

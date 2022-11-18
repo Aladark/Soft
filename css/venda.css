@@ -1,0 +1,176 @@
+ /* width */
+ .conteudo::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  .conteudo::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #b8bfc6;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  .conteudo::-webkit-scrollbar-thumb {
+    background: #2f3e56;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  .conteudo::-webkit-scrollbar-thumb:hover {
+    background: #151e2b;
+  }
+
+.main {
+    display: flex;
+    overflow-x: hidden;
+    background: rgb(21,30,43);
+    background: linear-gradient(128deg, rgba(21,30,43,1) 0%, rgba(2,0,36,1) 100%);
+    color: white;
+}
+
+body {
+    margin: 8px 0 8px 0;
+}
+
+.filtro {
+    width: 1%;
+    opacity: 0;
+    height: 700px;
+    text-align: center;
+    transition: .3s;
+}
+.filtro:hover {
+    width: 25%;
+    height: 700px;
+    opacity: 1;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.filtro:hover + .conteudo {
+    width: 75%;
+    transition: .3s;
+}
+
+.checkboxs {
+    min-height: 10%;
+    text-align: left;
+    width: 80%;
+    margin: auto;
+    opacity: 0;
+    transition: 0.5s;
+
+}
+
+.filtro:hover .checkboxs {
+    opacity: 1;
+    transition: 0.5s;
+    min-height: 80%;
+}
+
+.checkboxs input {
+    min-width: 25px;
+    min-height: 25px;
+    margin-top: 12px;
+}
+
+.checkboxs label {
+    font-size: 40px;
+}
+
+.conteudo {
+    width: 100%;
+    height: 700px;
+    display: block;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+.container {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    
+}
+
+.container img {
+    width: 60%;
+    margin-bottom: 5px;
+    border-radius: 55px;
+    border: 2px solid black;
+}
+
+.container h3 {
+    margin: 0;
+}
+
+.preco {
+    width: 0.2%;
+    height: 700px;
+    text-align: center;
+    opacity: 0;
+    transition: .3s;
+}
+
+.preco:hover {
+    width: 10%;
+    height: 700px;
+    opacity: 1;
+    display: block;
+    transition: 0.3s;
+}
+
+.preco:hover .ordem {
+    min-height: 80%;
+    opacity: 1;
+    transition: .5s;
+}
+
+.conteudo2 {
+    width: 90%;
+    transition: 0.3s;
+}
+
+.conteudo2 img {
+    transition: 0.3s;
+
+    border-radius: 50px;
+}
+
+.comprar {
+    border-radius: 10px;
+    background-color: white;
+    transition: .2s;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+}
+
+.comprar:hover {
+    transition: .2s;
+    color: green;
+    border: 2px solid green;
+    background-color: #F0F0F0;
+}
+
+.comprar h1 {
+    margin: 0; padding: 6px 12px 6px 12px;
+}
+
+
+.ordem {
+    max-width: 80%;
+    margin: auto;
+    text-align: left;
+    min-height: 10%;
+    opacity: 0;
+    transition: .5s;
+
+}
+
+.ordem input {
+    margin-top: 15px;
+}
