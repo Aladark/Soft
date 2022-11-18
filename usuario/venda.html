@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/venda.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Loja</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="filtro">
+
+            <h2>Filtrar</h2>
+
+            <div style="border-bottom: 2px solid white; width: 80%; margin: auto;"></div>
+
+            <div class="checkboxs">
+
+                <div>
+                <input type="checkbox" name="" id="filtro">
+                <label for="filtro">bandeiras</label>
+            </div>
+            <div>
+                <input type="checkbox" name="" id="filtro">
+                <label for="filtro">dsadsa</label>
+            </div>
+        <div>
+
+                <input type="checkbox" name="" id="filtro">
+                <label for="filtro">dsadsa</label>
+            </div>
+
+            </div>
+
+
+            <div id="barraesq" style="border-bottom: 2px solid white; width: 80%; margin: auto;"></div>
+
+        </div>
+        <div class="conteudo">
+            <div style="margin: 0 20px 0 20px ;">
+                <h2 style="float: left;">*Coloque o mouse na esquerda para os <br> filtros, e na direita a organização</h2>
+                <h2 style="float: right;">KofCoins 2000,00K$ </h2>
+            </div>
+            <div class="container2">
+                <div>
+                    <img src="../img/among-us-icon-png-02.png" alt="">
+                    <h3>Borda</h3>
+                    <h3>Don't starve</h3>
+                    <button class="comprar"><h1>27.00K$</h1></button>
+                </div>
+                <div>
+                    <img src="../img/among-us-icon-png-02.png" alt="">
+                    <h3>Borda</h3>
+                    <h3>Don't starve</h3>
+                    <button class="comprar"><h1>27.00K$</h1></button>
+                </div>
+                <div>
+                    <img src="../img/among-us-icon-png-02.png" alt="">
+                    <h3>Borda</h3>
+                    <h3>Don't starve</h3>
+                    <button class="comprar"><h1>27.00K$</h1></button>
+                </div>
+                <div>
+                    <img src="../img/among-us-icon-png-02.png" alt="">
+                    <h3>Borda</h3>
+                    <h3>Don't starve</h3>
+                    <button class="comprar"><h1>27.00K$</h1></button>
+                </div>
+               
+            </div>
+
+        
+            <div class="container2">
+                
+                <div>
+                    <img src="../img/among-us-icon-png-02.png" alt="">
+                    <h3>Borda</h3>
+                    <h3>Don't starve</h3>
+                    <button class="comprar"><h1>27.00K$</h1></button>
+                </div>
+                <div>
+                    <img src="../img/among-us-icon-png-02.png" alt="">
+                    <h3>Borda</h3>
+                    <h3>Don't starve</h3>
+                    <button class="comprar"><h1>27.00K$</h1></button>
+                </div>
+                <div>
+                    <img src="../img/among-us-icon-png-02.png" alt="">
+                    <h3>Borda</h3>
+                    <h3>Don't starve</h3>
+                    <button class="comprar"><h1>27.00K$</h1></button>
+                </div>
+                <div>
+                    <img src="../img/among-us-icon-png-02.png" alt="">
+                    <h3>Borda</h3>
+                    <h3>Don't starve</h3>
+                    <button class="comprar"><h1>27.00K$</h1></button>
+                </div>
+            </div>
+
+        </div>
+        <div class="preco">
+            <h2> Ordenar</h2>
+
+            <div style="border-bottom: 2px solid white; width: 80%; margin: auto;"></div>
+
+            <div class="ordem">
+            <input type="radio" name="ordem" id="1">
+            <label for="1">Alfabética</label><br>
+            <input type="radio" name="ordem" id="2">
+            <label for="2">Maior preço</label><br>
+            <input type="radio" name="ordem" id="3">
+            <label for="3">Menor preço</label>
+        </div>
+
+
+
+        <div id="barradi" style="border-bottom: 2px solid white; width: 80%; margin: auto;"></div>
+
+        </div>
+
+
+
+    </div>
+</body>
+
+<script>
+    $(document).ready(function(){
+    $('.preco').hover(function(){
+        $(this).prev().toggleClass('conteudo2');
+    });
+});
+</script>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/perfil.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>Nome do usuario</title>
+</head>
+
+<body>
+    <!--Inicio da header (cabeçalho)-->
+    <div class="section">
+        <header id="nav" class="sticky-nav">
+
+            <nav class="container">
+
+                <ul role="list" class="nav-grid">
+                    <li id="w-node-_151d960c-bb04-cfc3-fd7d-356ce1fa0176-31e55b4d" class="list-item-3">
+                        <!--link junto com a logo-->
+                        <a href="../index.html" class="nav-logo-link">
+                            <img src="../img/logo.png" sizes="(max-width: 479px) 80.296875px, 81.65625px"
+                                srcset="../img/logo.png 735w" alt="HomePage" class="nav-logo" /></a>
+                        <!--Fim link junto com a logo-->
+                    </li>
+                    <!--link do cadastrar e login-->
+                    <li class="list-item">
+                        <a href="#" class="nav-link">Denuncias</a>
+                    </li>
+
+                    <!--Fim link do cadastrar e login-->
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Foto de background -->
+    <!-- Aqui é onde o usuario irá escolher a foto de fundo, onde está o background-image -->
+    <div style="background-color: white; background-image: url(../img/Background_Layout.png);" class="backimg">
+
+        <div class="container containerbg">
+
+            <div class="headerperfil">
+                <!-- Imagem do icone do usuario, onde está o src -->
+                <img src="../img/Kreobio.jpg" alt="">
+
+                <div>
+                    <!-- Nick do usuario -->
+                    <p2>Kreobio</p2>
+
+                    <!-- na classe abaixo você quem define qual emoji e a cor quer. abaixo 
+                        terá um exemplo junto com a lista de emojis e cores disponiveis
+
+                    #lista de cores
+                    *verde
+                    *verde-claro
+                    *amarelo
+                    *laranja
+                    *laranja-escuro
+                    *vermelho
+                    *branco
+                    *azul
+                    *azul-claro
+
+                    #lista de emojis
+                    *muito-feliz
+                    *feliz
+                    *neutro
+                    *desconfiado
+                    *triste
+                    *raiva
+                    *adm
+                    *invertido
+                    *morto
+                -->
+                    <p2>
+                        <p3 class="adm laranja-escuro">
+                    </p2>
+
+                    <!-- Onde está o texto do lorem é a descrição do perfil do usuario -->
+
+                    <p style="color: white; padding-left: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Enim aperiam,
+                        nam veritatis odio nesciunt saepe quos quaerat harum illo aut eligendi,
+                        quae consequatur? Ducimus nulla quae aut ex aspernatur consequatur.</p>
+
+                    <!-- Tag do discord do usuario -->
+                    <p style="color: white; padding-left: 20px;">Discord: 02o10o0421</p>
+                </div>
+            </div>
+            <div class="w3-light-grey w3-tiny" style="margin: 0 50px 0 50px; border: 2px solid black;">
+
+                <!-- Level atual do usúario -->
+                <div class="lvl">30</div>
+
+                <!-- Onde está escrito "width: 50%" é o nível de xp do usuario, fazer alguma logica de quando estiver
+                em 100%, ele passar para o proximo nivel -->
+                <div class="w3-container w3-green" id="xp" style="width:50%; border: 2px solid #91e594;">&nbsp</div>
+
+                <!-- Proximo nivel do usuario -->
+                <div class="lvl lvlrgt" id="lvl">30
+                </div>
+            </div>
+
+
+
+            <div class="bodyperfil">
+
+
+                <!-- No caso, este botão só irá aparecer para o usuario logado, para adicionar os jogos a propria conta 
+                ele está redirecionando para a pagina de adicionar os jogos-->
+                <button class="addjogo" id="adicionar jogos"><a href="addjogo.php" style="text-decoration: none;">+</a></button>
+                <h2 class="meusjogos">Meus Jogos</h2>
+
+                <!-- para adicionar os jogos, primeiramente você precisa colocar a <div class="divisao", logo após isso
+                colocar o limite maximo de jogos de 6, quando você coloca uma nova <div class="divisao", você coloca
+                uma nova linha no "Meus Jogos" -->
+
+                <!-- div com a class divisao -->
+                <div class="divisao">
+
+                    <!-- Exemplo de bloco de codigo para o jogo -->
+                    <div class="jogo">
+                        <!-- mudar a url dessa "background-image" e colocar a imagem atribuida ao jogo-->
+                        <!-- O id="opnmodal, faz com que seja aberto a modal com as informações do jogo e do usuario" -->
+                        <button style="background-image: url(../img/Kreobio.jpg);" id="opnmodal"></button>
+
+                        <!-- Nome do jogo -->
+                        <p>League of Legends</p>
+                    </div>
+                    <!-------------------------------------------->
+
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                </div>
+                <!-- Fim do bloco de codigo de exemplo, lembrando, nunca coloque mais de 6 jogos em uma divisao -->
+
+                <div class="divisao">
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                </div>
+                <div class="divisao">
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+                    <div class="jogo">
+                        <button style="background-image: url(../img/Kreobio.jpg);"></button>
+                        <p>League of Legends</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- A modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Conteudo da modal -->
+            <div class="modal-content">
+
+                <!-- Cabeçalho da modal -->
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <!-- Nome do jogo -->
+                    <h2>League of Legends</h2>
+                </div>
+
+                <!-- Body da modal -->
+                <div class="modal-body" style="display: flex;">
+                    <div class="secao">
+
+                        <!-- Game id do usuario dentro do jogo -->
+                        <h2>Game id: Kreobio</h2>
+
+                        <!-- Avaliação pessoal do usuario quanto ao jogo -->
+                        <h3>Avaliação Pessoal do Jogo: 9.0</h3>
+
+                        <!-- Quaisquer observações que o usuario queira atribuir ao jogo em questão -->
+                        <p>Obs: Sou ouro platina grão-mestre mestre
+                            challenger ultra mega power mono mordekaiser</p>
+                        <!-- Lista de plataformas -->
+                        <h3>Plataformas</h3>
+                        <div class="plataforma">
+                            <!-- Aqui neste caso, irá trocar a imagem da plataforma, apenas isso, tambem lembre-se de 
+                            colocar o alt, com o nome da plataforma em questão -->
+                            <img src="../img/arrow-repeat.svg" alt="">
+                            <img src="../img/arrow-repeat.svg" alt="">
+                            <img src="../img/arrow-repeat.svg" alt="">
+                            <img src="../img/arrow-repeat.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="barra"></div>
+                    <div class="secao" style="display: flex;">
+                        <div class="imagemjogo" style="background-image: url(../img/lolback.jpg);">
+                        </div>
+                        <div class="descjogo">
+                            <h2>Sobre:</h2>
+                            <!-- Descrição do jogo -->
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit harum blanditiis
+                                veritatis nobis dignissimos. Unde quos odio, fugiat obcaecati necessitatibus nihil,
+                                tempore repellat tenetur, omnis accusamus nam mollitia dicta excepturi? Lorem ipsum
+                                dolor sit, amet consectetur adipisicing elit. Ea eos, illo odit sint impedit tenetur cum
+                                laudantium deleniti sapiente modi, qui sequi soluta dignissimos provident, atque
+                                exercitationem! Fugit, et suscipit?</p>
+                            <!-- Avaliação geral do jogo -->
+                            <h3>Avaliação Geral do Jogo: 9.0</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rodapé da modal -->
+                <div class="modal-footer" style="display: flex;">
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+</body>
+
+<script>
+    var level = document.getElementById("xp").style.width;
+
+    if (level == "98%" || !level) {
+        document.getElementById('lvl').style.backgroundColor = '#4CAF50';
+        document.getElementById('lvl').style.borderRight = '2px solid #91e594';
+        document.getElementById('lvl').style.borderTop = '2px solid #91e594';
+        document.getElementById('lvl').style.borderBottom = '2px solid #91e594';
+        document.getElementById('lvl').style.color = 'white';
+    }
+
+    // Modal
+    // Pega a modal
+    var modal = document.getElementById("myModal");
+
+    // Pega o botão e abre a modal
+    var btn = document.getElementById("opnmodal");
+
+    // Pega o elemento <span> que fecha a modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // Quando clicar no botão, abre a modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // Quando o usuario cliclar no <span> (x), fechará a modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // Quando o usuario cliclar em qualquer lugar fora da modal, irá fechar
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,308 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/cadastrar.css" />
+
+  <!-- script do croppie (ainda é necessario revisar para implementar) -->
+  <link rel="stylesheet" href="croppie.css" />
+  <script src="croppie.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="../css/bootsrap.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <title>Cadastrar</title>
+</head>
+
+<body>
+  <div class="section">
+    <div class="container">
+      <div class="imgborder">
+        <div class="inputs">
+          <!-- logo junto com nome -->
+          <div class="logocenter">
+            <a style="text-decoration: none;" href="/"><img src="../img/logo.png" alt="logoicon" /><br />
+              KoftTec
+            </a>
+          </div>
+          <!------------------------->
+
+          <form method="POST"  name="cas1" autocomplete="off" spellcheck="false">
+            <!-- nome do usuario -->
+            <label for="nomeuser">Nome</label>
+            <input class="inputborder" type="text" maxlength="40" name="nomeuser" placeholder="Informe seu nome" required />
+            <!------------------------->
+
+            <!-- email do usuario -->
+            <label for="emailuser">E-mail</label>
+            <input type="email" maxlength="200" name="emailuser" id="emailuser" placeholder="Informe seu endereço de E-mail" onkeyup="validaEmail()" oninvalid="validaEmail()" data-toggle="tooltip" title="" oninvalid="this.setCustomValidity('Insira um endereço de e-mail válido')" required />
+            <!------------------------->
+
+            <!-- nick do usuario -->
+            <label for="loginuser">Login</label>
+            <input type="text" maxlength="30" name="loginuser" id="loginuser" placeholder="Informe seu nome de usuário" required />
+            <!------------------------->
+            <div id="uname_response" ></div>
+
+            <!-- data de nascimento do usuario -->
+            <label for="datanascimentouser">Data de Nascimento</label>
+            <input type="text" placeholder="Data de nascimento" onfocus="(this.type='date')" onfocusout="(this.type='text')" name="datanascimentouser" onkeyup="mudadata()" id="datanascimentouser" data-toggle="tooltip" title="Sua data de nascimento só será utilizada para fins comemorativos e verificação de idade mínima para acesso à loja" required />
+            <!------------------------->
+
+            <!-- genero do usuario -->
+            <span>
+              <label for="sexouser">Gênero:</label><br />
+              <input type="radio" name="sexouser" id="M" value="M" />
+              <label for="M">Masculino</label>
+              <input type="radio" name="sexouser" id="F" value="F" style="margin-left: 10px" />
+              <label for="F">Feminino</label>
+              <input type="radio" name="sexouser" id="O" value="O" style="margin-left: 10px" />
+              <label for="O">Outro</label>
+            </span>
+            <br />
+            <!------------------------->
+
+            <!-- senha do usuario -->
+            <label for="senhauser">Senha</label>
+            <div>
+              <input type="password" maxlength="100" name="senhauser" id="senhauser" title="Sua senha deve conter no mínimo 8 caracteres, uma maiúscula, uma minúscula, um número e um símbolo" placeholder="Informe sua senha" data-toggle="tooltip" onkeyup="validaSenha()" required />
+              <!-- olho de reabrir senha -->
+              <i class="eyepass openedeye pass" style="cursor: pointer" toggle="#senhauser"><img src="" style="width: 20px" /></i>
+            </div>
+            <!------------------------->
+
+            <!-- confirmação de senha do usuario -->
+            <label for="senhaconf">Confirme sua senha</label>
+            <div>
+              <input type="password" maxlength="100" name="senhaconf" id="senhaconf" placeholder="Confirmar sua senha" required />
+              <!-- olho de reabrir senha -->
+              <i class="eyepass openedeye" style="cursor: pointer" toggle="#senhaconf"><img src="" style="width: 20px" /></i>
+            </div>
+            <!------------------------->
+
+            <!-- input da foto do usuario  -->
+            <inser>
+              <label for="fotouser">Ícone</label>
+              <input type="file" name="fotouser" id="fotouser" onchange="readURL(this);" />
+              <!-- preview da foto do usuario -->
+              <img style="max-width: 200px; width: 100%; margin-bottom: 10px" id="preview" src="http://placehold.it/180" alt="Seu ícone" />
+            </inser>
+            <!------------------------->
+            <input type="hidden" value="" name="partEmail" id="partEmail">
+            <!-- botão de submit -->
+            <button type="submit" name="salvaruser" class="submitbtn" onclick="readEmail()" onmouseleave="voltar(this)">
+              Vamos começar a diversão?
+            </button>
+            <!------------------------->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 
+  <script>
+      $(document).ready(function() {
+
+        $("#loginuser").keyup(function() {
+
+          var loginuser = $(this).val().trim();
+
+          if (loginuser != '') {
+
+            $.ajax({
+              url: '../classe/UsuarioSQL.php',
+              type: 'post',
+              data: {
+                loginuser: loginuser
+              },
+              success: function(response) {
+https://makitweb.com/check-username-availability-with-jquery-and-ajax/#:~:text=Create%20ajaxfile.,it%20exists%20then%20return%20Available.
+                $('#uname_response').html(response);
+
+              }
+            });
+          } else {
+            $("#uname_response").html("");
+          }
+
+        });
+
+      });
+    
+  </script> -->
+
+  <!-- bloco de codigo de verificações e validações das inputs -->
+
+  <script>
+    // script de validação de email
+    // ele só vai verificar se é um email válido, ou seja, se possui @ e outras verificações
+
+    // lembrando que essas verificações retornam os erros em formas de cores para o usuario, talvez fosse bom
+    // pensar na acessibilidade, mas não é o momento
+    function validaEmail() {
+      var email = document.getElementById("emailuser").value;
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+      if (email.match(mailformat) || email == "") {
+        $("#emailuser").removeClass("errorinput");
+        $("#emailuser").attr("data-original-title", "").tooltip("fixTitle");
+      } else {
+        $("#emailuser").addClass("errorinput");
+        $("#emailuser")
+          .attr(
+            "data-original-title",
+            "Por favor, informe um endereço de e-mail válido"
+          )
+          .tooltip("fixTitle");
+      }
+    }
+
+    //----------------------------------------------//
+
+    // função de validação de senha, vai verificar se possui numero, caracteres baixos e altos, simbolo e no minimo
+    // 8 letras, mesmo esquema do email, ira retornar com cores e mensagens
+    function validaSenha() {
+      var senha = document.getElementById("senhauser").value;
+      var caixaBaixa = /[a-z]/g;
+      var caixaAlta = /[A-Z]/g;
+      var numeros = /[0-9]/g;
+      var simbolos = /[\W|_]/;
+
+      if (
+        (senha.match(caixaBaixa) &&
+          senha.match(caixaAlta) &&
+          senha.match(numeros) &&
+          senha.match(simbolos) &&
+          senha.length >= 8) ||
+        senha == ""
+      ) {
+        $("#senhauser").removeClass("errorinput");
+        $(".pass").removeClass("erroreye");
+      } else {
+        $("#senhauser").addClass("errorinput");
+        $(".pass").addClass("erroreye");
+
+        // o codigo abaixo foi um teste e de preferencia não o apague, pois pode ser utilizado como referencia para
+        // mudar o titulo da popup message
+
+        // .attr('data-original-title', 'your new title')
+        // .tooltip('fixTitle');
+        // if(senha.match(caixaBaixa)){
+        //   $("#senhauser").attr('data-original-title', 'Você ainda precisa inserir ao menos 8 caracteres, uma letra maiuscula, um número e um símbolo')
+        // .tooltip('fixTitle');
+        // }
+        // if(senha.match(caixaBaixa).match(caixaAlta)){
+        //   $("#senhauser").attr('data-original-title', 'Você ainda precisa inserir ao menos 8 caracteres, uma letra maiuscula, um número e um símbolo')
+        // .tooltip('fixTitle');
+        // }
+      }
+    }
+
+    //----------------------------------------------//
+
+    // função que já vai deixar a popup message funcionando
+    $(document).ready(function() {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+    //---------------------------------------------//
+  </script>
+  <!-------------------------------------->
+
+  <!-- bloco de script para meras alterações visuais, cores, alteração de tamanhos etc -->
+  <script>
+    // bloco de codigo para alterar o visual do botão de submit
+    function voltar(e) {
+      $(".submitbtn").text("Vamos começar a diversão?");
+    }
+
+    $(".submitbtn").hover(function(e) {
+      $(this).text("VAMOS!!! (Cadastrar)");
+    });
+
+    //-------------------------------------//
+
+    //função de mudar a cor da data, para evitar erros visuais
+    function mudadata() {
+      if ("#datanascimentouser".value != "dd/mm/aaaa") {
+        $("#datanascimentouser").addClass("mudadata");
+      }
+    }
+    //-------------------------------------//
+
+    //função de visualizar a senha, preste atenção nas class, caso vá fazer mudanças
+    $(".eyepass").click(function() {
+      $(this).toggleClass("openedeye closedeye");
+      var input = $($(this).attr("toggle"));
+      if (input.attr("type") == "password") {
+        input.attr("type", "text");
+      } else {
+        input.attr("type", "password");
+      }
+    });
+    //-------------------------------------//
+  </script>
+  <!-------------------------------------->
+
+  <!-- bloco de script para ferramentas -->
+  <script>
+    //função de dar a preview do icone do usuario
+    // function readURL(input) {
+    //   if (input.files && input.files[0]) {
+    //     var reader = new FileReader();
+
+    //     reader.onload = function(e) {
+    //       $("#preview").attr("src", e.target.result);
+    //     };
+    //     $("#fotouser").addClass("FilledIcon");
+    //     reader.readAsDataURL(input.files[0]);
+    //   }
+    // }
+
+    // function readEmail() {
+    //   var partMail = document.getElementById('emailuser').value;
+    //   var site = partMail.substring(partMail.indexOf("@") + 1, partMail.lastIndexOf("."));
+
+    //   document.getElementById('partEmail').value = site
+
+    // }
+
+    //----------------------------------------------//
+  </script>
+  <!-------------------------------------->
+
+  <?php
+  if (isset($_POST['salvaruser'])) {
+    if ($_POST['senhaconf'] == $_POST['senhauser']) {
+      if (
+        !empty($_POST['nomeuser']) &&
+        !empty($_POST['emailuser']) &&
+        !empty($_POST['loginuser'])  &&
+        !empty($_POST['datanascimentouser']) &&
+        !empty($_POST['sexouser']) &&
+        !empty($_POST['senhauser'])
+      ) {
+        include_once('../classe/usauriocadastrar.php');
+        
+        echo "<meta http-equiv=refresh content='0.5;
+        URL=sucesso.html
+        
+        '> ";
+      }
+    }
+  }
+  ?>
+
+</body>
+
+</html>

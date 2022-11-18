@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/grupos.css">
+    <title>Grupos</title>
+</head>
+
+<body>
+    <!--Inicio da header (cabeçalho)-->
+    <div class="section">
+        <header id="nav" class="sticky-nav">
+
+            <nav class="container">
+
+                <ul role="list" class="nav-grid">
+                    <li id="w-node-_151d960c-bb04-cfc3-fd7d-356ce1fa0176-31e55b4d" class="list-item-3">
+                        <!--link junto com a logo-->
+                        <a href="../index.html" class="nav-logo-link">
+                            <img src="../img/logo.png" sizes="(max-width: 479px) 80.296875px, 81.65625px"
+                                srcset="../img/logo.png 735w" alt="HomePage" class="nav-logo" /></a>
+                        <!--Fim link junto com a logo-->
+                    </li>
+                    <!--l ink do cadastrar e login-->
+                    <li class="list-item">
+                        <a href="#" alt="Notificação" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="30" height="30" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                            </svg></a>
+
+                    </li>
+
+                    <li class="list-item">
+                        <a href="#" alt="Perfil" class="nav-link">Nome</a>
+                    </li>
+
+                    <!--Fim link do cadastrar e login-->
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div style="display: flex;">
+        <div class="secao1">
+            <h1>Encontre um grupo</h1>
+            <input type="text" placeholder="Procurar nome do grupo" name="" id="">
+
+            <div class="scrollgroup">
+                <div class="grupos">
+                    <div class="grupo" onclick="opnmodal()">
+                        <div class="imgjogo"></div>
+                        <div class="infogrupo">
+                            <h2>Nome do Grupo</h2>
+                            <h3>League of Legends</h3>
+                            <p>num. Max: 10</p>
+
+                        </div>
+
+                    </div>
+                    <div class="grupo">
+                        <div class="imgjogo"></div>
+                        <div class="infogrupo">
+                            <h2>Nome do Grupo</h2>
+                            <h3>League of Legends</h3>
+                            <p>num. Max: 10</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="secao2">
+
+            <h1>Filtar pelo jogo</h1>
+            <select name="Jogos" id="">
+                <option value="">Nome do jogo</option>
+            </select>
+            <br><br><br>
+            <br><br><br>
+            <br><br><br>
+            <br><br><br>
+            <br><br><br>
+            <h1>Criar um grupo</h1>
+
+            <button onclick="opnmodal()">Criar</button>
+
+        </div>
+
+        <div id="myModal" class="modal">
+
+            <!-- Conteudo da modal -->
+            <div class="modal-content">
+
+                <!-- Cabeçalho da modal -->
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <!-- Nome do jogo -->
+                    <h2 style="text-align: center;">Nome do Grupo</h2>
+                </div>
+
+                <!-- Body da modal -->
+                <div class="modal-body">
+                    <div class="imagemjogo" style="background-image: url(../img/lolback.jpg);">
+                        <br><br><br>
+                        <div style="background-color: rgb(255, 255, 255, 0.8); border-radius: 15px; margin: 10px;">
+                            <p style="padding: 30px; opacity: 1;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur blanditiis odit
+                                voluptatum. Distinctio provident ipsam est ad quas ex quo tenetur dignissimos quisquam
+                                labore facere, quam quaerat veniam perferendis vel.</p>
+                        </div>
+                    </div>
+
+                    <h2 style="text-align: center;">Membros</h2>
+                    <div class="scrollmodal">
+                        <div class="grupos">
+                            <div class="grupo">
+                                <div style="background-image: url(../img/among-us-icon-png-02.png);" class="imguser">
+                                </div>
+                                <div class="infouser">
+                                    <h2>Nome da pessoa</h2>
+
+                                </div>
+                            </div>
+                            <div class="grupo">
+                                <div style="background-image: url(../img/among-us-icon-png-02.png);" class="imguser">
+                                </div>
+                                <div class="infouser">
+                                    <h2>Nome da pessoa</h2>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="grupos">
+                            <div class="grupo">
+                                <div style="background-image: url(../img/among-us-icon-png-02.png);" class="imguser">
+                                </div>
+                                <div class="infouser">
+                                    <h2>Nome da pessoa</h2>
+
+                                </div>
+                            </div>
+                            <div class="grupo">
+                                <div style="background-image: url(../img/among-us-icon-png-02.png);" class="imguser">
+                                </div>
+                                <div class="infouser">
+                                    <h2>Nome da pessoa</h2>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="grupos">
+                            <div class="grupo">
+                                <div style="background-image: url(../img/among-us-icon-png-02.png);" class="imguser">
+                                </div>
+                                <div class="infouser">
+                                    <h2>Nome da pessoa</h2>
+
+                                </div>
+                            </div>
+                            <div class="grupo">
+                                <div style="background-image: url(../img/among-us-icon-png-02.png);" class="imguser">
+                                </div>
+                                <div class="infouser">
+                                    <h2>Nome da pessoa</h2>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="grupos">
+                            <div class="grupo">
+                                <div style="background-image: url(../img/among-us-icon-png-02.png);" class="imguser">
+                                </div>
+                                <div class="infouser">
+                                    <h2>Nome da pessoa</h2>
+
+                                </div>
+                            </div>
+                            <div class="grupo">
+                                <div style="background-image: url(../img/among-us-icon-png-02.png);" class="imguser">
+                                </div>
+                                <div class="infouser">
+                                    <h2>Nome da pessoa</h2>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rodapé da modal -->
+                <div class="modal-footer" style="display: flex;">
+                    <button class="entrar">
+                        Participar
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+</body>
+
+
+<script>
+
+    // Modal
+    // Pega a modal
+    var modal = document.getElementById("myModal");
+
+    // Pega o botão e abre a modal
+    var btn = document.getElementById("opnmodal");
+
+    // Pega o elemento <span> que fecha a modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // Quando clicar no botão, abre a modal
+    function opnmodal() {
+        modal.style.display = "block";
+    }
+
+    // Quando o usuario cliclar no <span> (x), fechará a modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // Quando o usuario cliclar em qualquer lugar fora da modal, irá fechar
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+</script>
+
+</html>

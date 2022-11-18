@@ -1,0 +1,96 @@
+.relative {
+  position: relative;
+}
+
+.relative:hover .complete {
+  animation: logo  1s alternate forwards;
+}
+
+.relative:hover + .complete {
+  animation: logo  1s alternate-reverse forwards;
+
+  }
+
+.relative:hover .T {
+  animation: logoT 0.5s alternate forwards;
+}
+
+.relative:hover .C {
+  animation: logoC 0.5s alternate forwards;
+}
+
+.absolute {
+  position: absolute;
+  top: 0px;
+}
+.complete {
+  position: absolute;
+  top: 0px;
+  opacity: 0%;
+}
+
+.K {
+  margin-left: 27.2rem;
+}
+
+.T {
+  margin-top: 0.3rem;
+  margin-left: 45rem;
+}
+
+.C {
+  margin-top: 0.3rem;
+  margin-left: 60rem;
+}
+
+@keyframes logo {
+  0% {
+    opacity: 0%;
+  }
+  37%{
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes logoT {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(32.2rem);
+  }
+}
+
+@keyframes logoC {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(44.5rem);
+  }
+}
+
+
+#item {
+  width: 70px;
+  height: 70px;
+  background-color: black;
+  line-height: 1;
+  color: white;
+}
+
+#item+div {
+  width: 70px;
+  height: 100px;
+  background-color: blue;
+  transform: perspective(250px) rotateX(-90deg);
+  transform-origin: 50% 0%;
+  transition:  .25s ease-in-out
+}
+
+#item:hover+div {
+  transform: perspective(250px) rotateX(0);
+}

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/chat.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!--Inicio da header (cabeçalho)-->
+  <div class="section">
+    <header id="nav" class="sticky-nav">
+      <nav class="container">
+        <ul role="list" class="nav-grid">
+          <li id="w-node-_151d960c-bb04-cfc3-fd7d-356ce1fa0176-31e55b4d" class="list-item-3">
+            <!--link junto com a logo-->
+            <a href="../index.html" class="nav-logo-link">
+              <img src="../img/logo.png" sizes="(max-width: 479px) 80.296875px, 81.65625px"
+                srcset="../img/logo.png 735w" alt="HomePage" class="nav-logo" /></a>
+            <!--Fim link junto com a logo-->
+          </li>
+          <!--link do cadastrar e login-->
+          <li class="list-item">
+            <a href="#" class="nav-link">Cadastrar</a>
+          </li>
+          <li class="list-item">
+            <a href="../logar/login.php" class="nav-link">Login</a>
+          </li>
+          <!--Fim link do cadastrar e login-->
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <!--Fim da header (cabeçalho)-->
+
+  <!--Abaixo está a linha que cria a aba do amigo, no "bloco de amigo selecionado" será descrito exatamente dessa forma
+    "<a href="Insira o link" class="list-group-item (a classe list-group-item deve estar em qualquer bloco, independente
+    se for selecionado ou não) (se quiser deixar o usuario como "selecionado", adicione a propriedade "active" a class
+    <img src="link da imagem do usuario" alt"de preferencia, coloque o nick do usuario aqui" <span class="não mexa em
+    nada"> agora você coloca o nick do usuario </span></a>"-->
+
+  <!--Se quiser que o usuario indique apareça a borda de notificação, faça que nem com a classe active, adicione a
+    classe "notify", lembrando que se o usuario estiver ativo, você vai ter lido a mensagem, logo não precisa da
+    notificação-->
+
+  <style>
+    .sair {
+      position: absolute;
+      display: none;
+      width: 50%;
+      height: 50%;
+      margin: auto;
+      left: 25%;
+      top: 20%;
+      border-radius: 15px;
+      border: 2px solid black;
+      text-align: center;
+      font-size: 40px;
+      background-color: rgb(224, 212, 235, 0.9);
+      color: white;
+    }
+
+    .avaliacao {
+      position: absolute;
+      display: none;
+      width: 70%;
+      height: 70%;
+      margin: auto;
+      left: 15%;
+      top: 10%;
+      border-radius: 15px;
+      border: 2px solid black;
+      text-align: center;
+      font-size: 40px;
+      background-color: rgb(224, 212, 235, 0.9);
+      color: white;
+    }
+
+    .sair button {
+      padding: 20px;
+      font-size: 30px;
+      background-color: white;
+      width: 200px;
+      border-radius: 15px;
+      margin-left: 40px;
+      margin-right: 40px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .avaliacao button {
+      padding: 10px;
+      font-size: 30px;
+      background-color: white;
+      width: 200px;
+      border-radius: 15px;
+      float: left;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .sim:hover {
+      background-color: chartreuse;
+      border: 2px solid green;
+    }
+
+    .nao:hover {
+      background-color: red;
+      border: 2px solid darkred;
+    }
+
+    .pular {
+      float: right !important;
+    }
+    .pular:hover {
+      background-color: gold;
+      border: 2px solid rgb(177, 150, 0);
+      color: black;
+    }
+
+
+    /* - - - - - RATINGS */
+    .rating {
+      position: absolute;
+      margin-top: -45px;
+      margin-left: 100px;
+      width: 150px;
+      height: 30px;
+      padding: 5px 10px;
+      border-radius: 30px;
+      background: #FFF;
+      display: block;
+      overflow: hidden;
+
+      box-shadow: 0 1px #CCC,
+        0 5px #DDD,
+        0 9px 6px -3px #999;
+
+      unicode-bidi: bidi-override;
+      direction: rtl;
+    }
+
+    .rating:not(:checked)>input {
+      display: none;
+    }
+
+    /* - - - - - RATE */
+    #rate {
+      top: -65px;
+    }
+
+    #rate:not(:checked)>label {
+      cursor: pointer;
+      float: right;
+      width: 30px;
+      height: 30px;
+      display: block;
+
+      color: rgba(0, 135, 211, .4);
+      line-height: 33px;
+      text-align: center;
+    }
+
+    #rate:not(:checked)>label:hover,
+    #rate:not(:checked)>label:hover~label {
+      color: rgba(0, 135, 211, .6);
+    }
+
+    #rate>input:checked+label:hover,
+    #rate>input:checked+label:hover~label,
+    #rate>input:checked~label:hover,
+    #rate>input:checked~label:hover~label,
+    #rate>label:hover~input:checked~label {
+      color: rgba(0, 135, 211, .8);
+    }
+
+    #rate>input:checked~label {
+      color: rgb(0, 135, 211);
+    }
+
+    /* - - - - - LIKE */
+
+
+    #like:not(:checked)>label {
+      cursor: pointer;
+      float: right;
+      width: 30px;
+      height: 30px;
+      display: block;
+
+      color: rgba(233, 54, 40, .4);
+      line-height: 33px;
+      text-align: center;
+    }
+
+    #like:not(:checked)>label:hover,
+    #like:not(:checked)>label:hover~label {
+      color: rgba(233, 54, 40, .6);
+    }
+
+    #like>input:checked+label:hover,
+    #like>input:checked+label:hover~label,
+    #like>input:checked~label:hover,
+    #like>input:checked~label:hover~label,
+    #like>label:hover~input:checked~label {
+      color: rgba(233, 54, 40, .8);
+    }
+
+    #like>input:checked~label {
+      color: rgb(233, 54, 40);
+    }
+
+    .blocouser {
+      width: 95%;
+      background-color: white;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .userimg {
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 15px;
+      border: 2px solid black;
+      width: 60px;
+      height: 70px;
+
+    }
+  </style>
+
+  <!--Aba de chat-->
+  <div style="background: rgb(172,148,220);
+  background: linear-gradient(144deg, rgba(172,148,220,1) 0%, rgba(224,212,235,1) 100%); height: 100vh;">
+  <div style="max-width: 800px; margin: auto;">
+  <div class="col-chat" style="width: 100%;">
+   
+      <div class="blocouser">
+        <div class="userimg" style="background-image: url(../img/among-us-icon-png-02.png)">
+          <p style="margin: none; margin-left: 100px; margin-top: -1px; color: black;">Kreobio</p>
+        </div>
+
+        <textarea style="margin-top: -100px; margin-left: 230px; resize: none; font-size: 30px; "
+        name="" id="" cols="35" maxlength="80" rows="2"></textarea>
+
+        <!-- LIKE -->
+        <section id="like" class="rating" style="position: relative;">
+          <!-- FIFTH HEART -->
+          <input type="radio" id="heart_5" name="like" value="5" />
+          <label for="heart_5" title="Five">&#10084;</label>
+          <!-- FOURTH HEART -->
+          <input type="radio" id="heart_4" name="like" value="4" />
+          <label for="heart_4" title="Four">&#10084;</label>
+          <!-- THIRD HEART -->
+          <input type="radio" id="heart_3" name="like" value="3" />
+          <label for="heart_3" title="Three">&#10084;</label>
+          <!-- SECOND HEART -->
+          <input type="radio" id="heart_2" name="like" value="2" />
+          <label for="heart_2" title="Two">&#10084;</label>
+          <!-- FIRST HEART -->
+          <input type="radio" id="heart_1" name="like" value="1" />
+          <label for="heart_1" title="One">&#10084;</label>
+        </section>
+
+        <span
+        style="float: right;color: red; margin-top: -40px; margin-right: 12px; font-size: 40px; cursor: pointer;">&#33;</span>
+
+      </div>
+
+    </div>
+
+      <button class="sim" id="simavali">Pronto</button>
+      <button class="pular" id="pular" onclick="pular()">pular</button>
+
+    </div>
+    <div class="scroll">
+      <!--Bloco de mensagem de amigo-->
+      <div class="contain">
+        <img src="../img/verde.jpg" alt="Coloque o nick do usuario aqui" style="width: 100%" />
+        <!--Mensagem do usuario-->
+        <p>Hello. How are you today?</p>
+        <!--Fim da mensagem do usuario-->
+
+        <!--Hora da mensagem-->
+        <span class="time-right">11:00</span>
+        <!--Fim da hora da mensagem-->
+      </div>
+      <!--Bloco de mensagem de amigo-->
+
+      <!--Bloco de mensagem do proprio usuario-->
+      <div class="contain myuser">
+        <!--A classe "right, está deixando o icone na direita, e a mensagem a esquerda"-->
+        <img src="../img/among-us-icon-png-02.png" alt="Avatar" class="right" style="width: 100%" />
+        <!--Mensagem do proprio usuario-->
+        <p>SUS!</p>
+        <!--Fim da mensagem do proprio usuario-->
+
+        <!--Hora da mensagem-->
+        <span class="time-left">11:01</span>
+        <!--Fim da hora da mensagem-->
+      </div>
+      <!--Fim do bloco de mensagem do proprio usuario-->
+
+      <div class="contain">
+        <img src="../img/verde.jpg" alt="Avatar" style="width: 100%" />
+        <p>
+          What? What are you saying? Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Porro quasi harum provident
+          similique dolorem consequatur laboriosam perspiciatis veniam?
+          Dicta harum, culpa nam consectetur iure praesentium ratione
+          quae? Quia, nostrum mollitia!
+        </p>
+        <span class="time-right">11:02</span>
+      </div>
+
+      <div class="contain myuser">
+        <img src="../img/among-us-icon-png-02.png" alt="Avatar" class="right" style="width: 100%" />
+        <p><b>A M O G U S</b></p>
+        <span class="time-left">11:05</span>
+      </div>
+
+      <!---->
+      <div class="contain myuser">
+        <img src="../img/among-us-icon-png-02.png" alt="Avatar" class="right" style="width: 100%" />
+        <p><b>SUS!</b></p>
+        <span class="time-left">11:01</span>
+      </div>
+
+      <div class="contain">
+        <img src="../img/verde.jpg" alt="Avatar" style="width: 100%" />
+        <p>
+          What? What are you saying? Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Porro quasi harum provident
+          similique dolorem consequatur laboriosam perspiciatis veniam?
+          Dicta harum, culpa nam consectetur iure praesentium ratione
+          quae? Quia, nostrum mollitia!
+        </p>
+        <span class="time-right">11:02</span>
+      </div>
+
+      <div class="contain myuser">
+        <img src="../img/among-us-icon-png-02.png" alt="Avatar" class="right" style="width: 100%" />
+        <p><b>A M O G U S</b></p>
+        <span class="time-left">11:05</span>
+      </div>
+      <div class="contain myuser">
+        <img src="../img/among-us-icon-png-02.png" alt="Avatar" class="right" style="width: 100%" />
+        <p><b>SUS!</b></p>
+        <span class="time-left">11:01</span>
+      </div>
+
+      <div class="contain">
+        <img src="../img/verde.jpg" alt="Avatar" style="width: 100%" />
+        <p>
+          What? What are you saying? Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Porro quasi harum provident
+          similique dolorem consequatur laboriosam perspiciatis veniam?
+          Dicta harum, culpa nam consectetur iure praesentium ratione
+          quae? Quia, nostrum mollitia!
+        </p>
+        <span class="time-right">11:02</span>
+      </div>
+
+      <div class="contain myuser">
+        <img src="../img/among-us-icon-png-02.png" alt="Avatar" class="right" style="width: 100%" />
+        <p><b>A M O G U S</b></p>
+        <span class="time-left">11:05</span>
+      </div>
+    </div>
+
+    <!--Input de texto, para o usuario inserir a mensagem-->
+    <div class="chat-input" contenteditable="" style="margin-top: 15px; padding-right: 40px;"></div>
+    <button style="border: none;background-color: transparent; outline:none ;"><svg
+      style="position: absolute; right: 20; bottom: 28px; cursor: pointer;" id="enviar"
+      xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-circle"
+      viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+    </svg>
+  </button>
+    <!--Fim do Input de texto, para o usuario inserir a mensagem-->
+  </div>
+  
+
+  <!--Fim da aba de chat-->
+  </div>
+  </div>
+
+</div>
+</div>
+</body>
+
+<script>
+ 
+</script>
+
+</html>
